@@ -30,7 +30,6 @@ body {
     color: var(--color-tone-1);
     height: 100%;
     max-width: 500px;
-    min-width: 500px;
     margin: 0 auto;
     overflow-y: hidden;
 }

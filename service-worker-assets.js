@@ -201,7 +201,7 @@
       "url": "assets\/words.txt"
     },
     {
-      "hash": "sha256-770m\/9yHz79SVi\/hGsjAvwoPLW27BwOsqI0IIGEhoQY=",
+      "hash": "sha256-ACihZiQc52iuuWaR2REgrxUK4gO+5Ah+Q8GaLg11iPU=",
       "url": "css\/app.css"
     },
     {
@@ -225,5 +225,5 @@
       "url": "scripts\/theme-changer.js"
     }
   ],
-  "version": "S9Ge2v7T"
+  "version": "5v7QF7pI"
 };

@@ -197,7 +197,7 @@
       "url": "BlazorWordle.styles.css"
     },
     {
-      "hash": "sha256-UqBPT7hglTwqKcJ2kBS9ixLQkKGedXekYKKiWGvW1M4=",
+      "hash": "sha256-wHF95+nUAvKskWZXPt2BHBCqFFCXyLx3BDpVIiDmy7Q=",
       "url": "assets\/words.txt"
     },
     {
@@ -225,5 +225,5 @@
       "url": "scripts\/theme-changer.js"
     }
   ],
-  "version": "IDNRQXm6"
+  "version": "Pez7uNyC"
 };

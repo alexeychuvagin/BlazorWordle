@@ -10,7 +10,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddHttpClient<WordsClient>(cfg =>
     cfg.BaseAddress = builder.HostEnvironment.IsProduction()
-        ? new Uri(builder.HostEnvironment.BaseAddress + "/BlazorWordle/")
+        ? new Uri(builder.HostEnvironment.BaseAddress + "/BlazorWordle")
         : new Uri(builder.HostEnvironment.BaseAddress));
 builder.Services.AddTransient<GameState>();
 

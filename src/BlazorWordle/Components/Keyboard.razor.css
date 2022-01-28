@@ -30,6 +30,10 @@
         -webkit-tap-highlight-color: rgba(0,0,0,0.3);
     }
 
+        .keyboard button:last-of-type {
+            margin: 0;
+        }
+
     .keyboard .half {
         flex: 0.5;
     }

@@ -16,6 +16,10 @@
         font-size: 28px;
         text-transform: uppercase;
         pointer-events: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 
     header .info a {

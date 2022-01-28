@@ -1,0 +1,128 @@
+/* /Components/GameBoard.razor.rz.scp.css */
+.game-board[b-phsem7obfe] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+    gap: 5px;
+}
+
+    .game-board .game-board-row[b-phsem7obfe] {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .game-board .game-board-cell[b-phsem7obfe] {
+        border: 2px solid var(--color-tone-4);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: bold;
+        vertical-align: middle;
+        box-sizing: border-box;
+        color: var(--tile-text-color);
+        text-transform: uppercase;
+        user-select: none;
+        width: 62px;
+        height: 62px;
+    }
+
+    .game-board-cell[data-state='absent'][b-phsem7obfe] {
+        background-color: var(--gray);
+    }
+
+    .game-board-cell[data-state='correct'][b-phsem7obfe] {
+        background-color: var(--green);
+    }
+
+    .game-board-cell[data-state='present'][b-phsem7obfe] {
+        background-color: var(--yellow);
+    }
+/* /Components/Header.razor.rz.scp.css */
+header[b-p561xn6ztx] {
+    display: flex;
+    border-bottom: 1px solid var(--color-tone-4);
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    header .spacer[b-p561xn6ztx] {
+        height: 30px;
+        width: 30px;
+    }
+
+    header .title[b-p561xn6ztx] {
+        font-weight: 700;
+        font-size: 28px;
+        text-transform: uppercase;
+        pointer-events: none;
+    }
+
+    header .info a[b-p561xn6ztx] {
+        text-decoration: none;
+        color: var(--color-tone-2);
+        padding: 0 4px;
+    }
+/* /Components/Keyboard.razor.rz.scp.css */
+.keyboard[b-6p7ujmuzbn] {
+    margin: 0 8px;
+    user-select: none;
+}
+
+    .keyboard .row[b-6p7ujmuzbn] {
+        display: flex;
+        width: 100%;
+        margin: 0 auto 8px;
+        touch-action: manipulation;
+    }
+
+    .keyboard button[b-6p7ujmuzbn] {
+        font-family: inherit;
+        font-weight: bold;
+        border: 0;
+        padding: 0;
+        margin: 0 6px 0 0;
+        height: 58px;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+        background-color: var(--key-bg);
+        color: var(--key-text-color);
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        -webkit-tap-highlight-color: rgba(0,0,0,0.3);
+    }
+
+    .keyboard .half[b-6p7ujmuzbn] {
+        flex: 0.5;
+    }
+
+    .keyboard .one-and-a-half[b-6p7ujmuzbn] {
+        flex: 1.5;
+    }
+/* /Components/ThemeChanger.razor.rz.scp.css */
+button[b-ok6vkxppem] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 4px;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-ws90rtd6s6] {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}

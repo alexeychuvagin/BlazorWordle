@@ -24,7 +24,7 @@ jobs:
           dotnet-version: 6.0.x
       
       - name: Install dependencies
-        run: dotnet restore ./src/BlazorWordle/BlazorWordle.csproj
+        run: dotnet restore
       
       - name: Build project
         run: dotnet build --configuration Release --no-restore

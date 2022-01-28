@@ -44,8 +44,7 @@ public sealed class WordleGame
         {
             Status = GameStatus.Win;
         }
-
-        if (AttemptsLeft == 0)
+        else if (AttemptsLeft == 0)
         {
             Status = GameStatus.Lose;
         }

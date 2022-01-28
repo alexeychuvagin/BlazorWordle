@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-3w7DiTjc\/OuSjgWjVGKZPnPDSeLcy8GxiCdGsRh4WEg=",
+      "hash": "sha256-DQVWaOJSdM6tEU7T4BSsjcnM1g6JWcoGDYpAwniHbJg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -45,7 +45,7 @@
       "url": "_framework\/BlazorWordle.Core.dll"
     },
     {
-      "hash": "sha256-d9NMD5mjs0IMUgtcZ8brKFV1I\/rPIaKGyYb41pwFQik=",
+      "hash": "sha256-\/OLr246BhUoA3ebXiHS2\/xPD\/GOznHRow1mohV5aULw=",
       "url": "_framework\/BlazorWordle.dll"
     },
     {
@@ -61,7 +61,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
-      "hash": "sha256-qKNhfJXJz+SYoIe4Lq2\/On7dzoJHcbmmzxFpTB5ZdXk=",
+      "hash": "sha256-zN9C\/zNwaj+VxE70P5+P0+LbUu89+BYy4Pu\/28WIkrg=",
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
@@ -225,5 +225,5 @@
       "url": "scripts\/theme-changer.js"
     }
   ],
-  "version": "EMp5uY1f"
+  "version": "Qn1pIyoe"
 };

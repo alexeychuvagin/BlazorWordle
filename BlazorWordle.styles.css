@@ -9,32 +9,34 @@
     gap: 5px;
 }
 
-    .game-board .game-board-row[b-phsem7obfe] {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 5px;
-    }
+.game-board-row[b-phsem7obfe],
+[b-phsem7obfe] .active-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
 
-    .game-board .game-board-cell[b-phsem7obfe] {
-        border: 2px solid var(--color-tone-4);
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        line-height: 2rem;
-        font-weight: bold;
-        vertical-align: middle;
-        box-sizing: border-box;
-        color: var(--tile-text-color);
-        text-transform: uppercase;
-        user-select: none;
-        width: 62px;
-        height: 62px;
-    }
+.game-board-cell[b-phsem7obfe],
+[b-phsem7obfe] .active-row-cell {
+    border: 1px solid var(--color-tone-4);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+    vertical-align: middle;
+    box-sizing: border-box;
+    color: var(--tile-text-color);
+    text-transform: uppercase;
+    user-select: none;
+    width: 62px;
+    height: 62px;
+}
 
     .game-board-cell[data-state='absent'][b-phsem7obfe] {
-        background-color: var(--gray);
+        background-color: var(--darkgray);
     }
 
     .game-board-cell[data-state='correct'][b-phsem7obfe] {
@@ -78,16 +80,25 @@ header[b-p561xn6ztx] {
 .keyboard[b-6p7ujmuzbn] {
     margin: 0 8px;
     user-select: none;
+    margin-bottom: 5px;
 }
 
-    .keyboard .row[b-6p7ujmuzbn] {
-        display: flex;
-        width: 100%;
-        margin: 0 auto 8px;
-        touch-action: manipulation;
+.keyboard-row[b-6p7ujmuzbn] {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+    .keyboard-row .half[b-6p7ujmuzbn] {
+        flex: 0.5;
     }
 
-    .keyboard button[b-6p7ujmuzbn] {
+    .keyboard-row .one-and-a-half[b-6p7ujmuzbn] {
+        flex: 1.5;
+    }
+
+    .keyboard-row button[b-6p7ujmuzbn] {
         font-family: inherit;
         font-weight: bold;
         border: 0;
@@ -107,17 +118,21 @@ header[b-p561xn6ztx] {
         -webkit-tap-highlight-color: rgba(0,0,0,0.3);
     }
 
-        .keyboard button:last-of-type[b-6p7ujmuzbn] {
+        .keyboard-row button:last-of-type[b-6p7ujmuzbn] {
             margin: 0;
         }
 
-    .keyboard .half[b-6p7ujmuzbn] {
-        flex: 0.5;
-    }
+        .keyboard-row button[data-state='absent'][b-6p7ujmuzbn] {
+            background-color: var(--darkgray);
+        }
 
-    .keyboard .one-and-a-half[b-6p7ujmuzbn] {
-        flex: 1.5;
-    }
+        .keyboard-row button[data-state='correct'][b-6p7ujmuzbn] {
+            background-color: var(--green);
+        }
+
+        .keyboard-row button[data-state='present'][b-6p7ujmuzbn] {
+            background-color: var(--yellow);
+        }
 /* /Components/ThemeChanger.razor.rz.scp.css */
 button[b-ok6vkxppem] {
     background: none;

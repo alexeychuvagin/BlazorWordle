@@ -1,5 +1,5 @@
 # BlazorWordle
-![](/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
+![](.github/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
 
 A simple implementation of the Wordle game in Blazor.
 

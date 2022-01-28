@@ -9,6 +9,7 @@
     --yellow: #c9b458;
     --green: #6aaa64;
     --gray: #d8d8d8;
+    --darkgray: var(--color-tone-2);
     --key-bg: var(--color-tone-4);
     --key-text-color: var(--color-tone-1);
 }

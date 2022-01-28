@@ -1,46 +1,66 @@
-﻿@using BlazorWordle.Models
+﻿@using BlazorWordle.Interfaces
+@implements IDisposable
 
 <div class="keyboard">
-    <div class="row">
-        <button onclick="@(() => State?.PressKey('q'))">q</button>
-        <button onclick="@(() => State?.PressKey('w'))">w</button>
-        <button onclick="@(() => State?.PressKey('e'))">e</button>
-        <button onclick="@(() => State?.PressKey('r'))">r</button>
-        <button onclick="@(() => State?.PressKey('t'))">t</button>
-        <button onclick="@(() => State?.PressKey('y'))">y</button>
-        <button onclick="@(() => State?.PressKey('u'))">u</button>
-        <button onclick="@(() => State?.PressKey('i'))">i</button>
-        <button onclick="@(() => State?.PressKey('o'))">o</button>
-        <button onclick="@(() => State?.PressKey('p'))">p</button>
-    </div>
-    <div class="row">
-        <div class="half" />
-        <button onclick="@(() => State?.PressKey('a'))">a</button>
-        <button onclick="@(() => State?.PressKey('s'))">s</button>
-        <button onclick="@(() => State?.PressKey('d'))">d</button>
-        <button onclick="@(() => State?.PressKey('f'))">f</button>
-        <button onclick="@(() => State?.PressKey('g'))">g</button>
-        <button onclick="@(() => State?.PressKey('h'))">h</button>
-        <button onclick="@(() => State?.PressKey('j'))">j</button>
-        <button onclick="@(() => State?.PressKey('k'))">k</button>
-        <button onclick="@(() => State?.PressKey('l'))">l</button>
-        <div class="half" />
-    </div>
-    <div class="row">
-        <button class="one-and-a-half" onclick="@(() => State?.Submit())">Enter</button>
-        <button onclick="@(() => State?.PressKey('z'))">z</button>
-        <button onclick="@(() => State?.PressKey('x'))">x</button>
-        <button onclick="@(() => State?.PressKey('c'))">c</button>
-        <button onclick="@(() => State?.PressKey('v'))">v</button>
-        <button onclick="@(() => State?.PressKey('b'))">b</button>
-        <button onclick="@(() => State?.PressKey('n'))">n</button>
-        <button onclick="@(() => State?.PressKey('m'))">m</button>
-        <button class="one-and-a-half" onclick="@(() => State?.Backspace())">⬅️</button>
-    </div>
+    @for (int i = 0; i < _rows.Count; i++)
+    {
+        <div class="keyboard-row">
+
+            @if (i == 1)
+            {
+                <div class="half" />
+            }
+
+            @if (i == _rows.Count - 1)
+            {
+                <button class="one-and-a-half" onclick="@(() => State?.Submit())">Enter</button>
+            }
+
+            @foreach (var letter in _rows[i])
+            {
+                if (State.LettersInUse.ContainsKey(letter))
+                {
+                    var letterState = State.LettersInUse[letter].ToString().ToLower();
+                    <button data-state="@letterState" onclick="@(() => State?.PressKey(letter))">@letter</button>
+                }
+                else
+                {
+                    <button onclick="@(() => State?.PressKey(letter))">@letter</button>
+                }
+            }
+
+            @if (i == 1)
+            {
+                <div class="half" />
+            }
+
+            @if (i == _rows.Count - 1)
+            {
+                <button class="one-and-a-half" onclick="@(() => State?.Backspace())">⬅️</button>
+            }
+
+        </div>
+    }
 </div>
 
+
 @code {
+    private IList<char[]> _rows = new List<char[]> {
+        new char[] { 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p' },
+        new char[] { 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l' },
+        new char[] { 'z', 'x', 'c', 'v', 'b', 'n', 'm' }
+    };
+
     [Parameter]
     [EditorRequired]
-    public GameState? State { get; set; }
+    public IKeyboardState State { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        State.OnStateChanged += StateHasChanged;
+        return base.OnInitializedAsync();
+    }
+
+    public void Dispose()
+        => State.OnStateChanged -= StateHasChanged;
 }

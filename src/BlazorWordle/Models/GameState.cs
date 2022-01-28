@@ -2,60 +2,71 @@
 using BlazorWordle.Core;
 using BlazorWordle.Core.Enums;
 using BlazorWordle.Core.ValueObjects;
+using BlazorWordle.Interfaces;
 
 namespace BlazorWordle.Models;
 
-public sealed class GameState
+public sealed class GameState : IKeyboardState, IGameBoardState
 {
-    private readonly WordsClient _client;
+    private readonly WordleGame _game;
+    private CurrentWordState _currentWord;
 
-    public GameState(WordsClient client)
-        => _client = client;
+    public GameState(string solution)
+    {
+        _game = new WordleGame(solution, 6);
+        _currentWord = new CurrentWordState(solution.Length);
+    }
 
-    private WordleGame? _game = null;
+    #region Events
 
-    #region State
     public event Action? OnStateChanged;
-    public string CurrentWord { get; private set; } = string.Empty;
-    public int WordLength => _game?.WordLength ?? 0;
-    public int AttemptsLeft => _game?.AttemptsLeft ?? 0;
-    public IReadOnlyList<IReadOnlyList<Letter>> Board => _game?.Board ?? new List<IReadOnlyList<Letter>>();
+
     #endregion
 
-    public async Task CreateNewGameAsync()
-    {
-        var word = await _client.GetRandomWordAsync();
-        _game = new WordleGame(word, 6);
-    }
+    #region State
+
+    public int WordLength => _game.WordLength;
+    public int AttemptsLeft => _game.AttemptsLeft;
+    public ICurrentWordState CurrentWord => _currentWord;
+    public IReadOnlyList<IReadOnlyList<Letter>> Board => _game.Board;
+    public IReadOnlyDictionary<char, LetterState> LettersInUse => _game.LettersInUse;
+
+    #endregion
+
+    #region Actions
 
     public void Submit()
     {
-        if (IsGameInProgress && CurrentWord.Length == _game!.WordLength)
+        if (_game.Status != GameStatus.InProgress || !CurrentWord.IsCompleted)
         {
-            _game.Submit(CurrentWord);
-            CurrentWord = String.Empty;
-            NotifyStateChanged();
+            return;
         }
+
+        _game.Submit(CurrentWord.Value);
+        _currentWord.Clear();
+
+        OnStateChanged?.Invoke();
     }
 
     public void PressKey(char c)
     {
-        if (IsGameInProgress && CurrentWord.Length < _game!.WordLength)
+        if (_game.Status != GameStatus.InProgress)
         {
-            CurrentWord += c;
-            NotifyStateChanged();
+            return;
         }
+
+        _currentWord.Add(c);
     }
 
     public void Backspace()
     {
-        if (IsGameInProgress && CurrentWord.Length > 0)
+        if (_game.Status != GameStatus.InProgress)
         {
-            CurrentWord = CurrentWord[0..^1];
-            NotifyStateChanged();
+            return;
         }
+
+        _currentWord.RemoveLast();
     }
 
-    private bool IsGameInProgress => _game is not null && _game.Status == GameStatus.InProgress;
-    private void NotifyStateChanged() => OnStateChanged?.Invoke();
+    #endregion
 }

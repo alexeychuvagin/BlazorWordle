@@ -2,7 +2,7 @@
 
 public enum LetterState : byte
 {
-    Correct = 1,
+    Absent = 1,
     Present = 2,
-    Absent = 3
+    Correct = 3
 }

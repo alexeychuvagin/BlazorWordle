@@ -1,0 +1,24 @@
+﻿@using BlazorWordle.Interfaces
+@implements IDisposable
+
+<div class="active-row">
+    @for (int j = 0; j < State!.MaxLength; j++)
+    {
+        <div class="active-row-cell">@State![j]</div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public ICurrentWordState? State { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        State.OnStateChanged += StateHasChanged;
+        return base.OnInitializedAsync();
+    }
+
+    public void Dispose()
+        => State.OnStateChanged -= StateHasChanged;
+}

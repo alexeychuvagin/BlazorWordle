@@ -3,18 +3,25 @@
 @using BlazorWordle.Components
 @using BlazorWordle.Models
 @using BlazorWordle.Clients
-@inject GameState state
+@inject WordsClient client
 
 <PageTitle>Blazor Wordle</PageTitle>
 
-<Header />
-<GameBoard State="@state" />
-<Keyboard State="@state" />
+@if (_game is not null)
+{
+    <Header />
+    <GameBoard State="@_game" />
+    <Keyboard State="@_game" />
+}
 
 @code {
+    private GameState? _game;
+
     protected override async Task OnInitializedAsync()
     {
-        await state.CreateNewGameAsync();
+        var word = await client.GetRandomWordAsync();
+        _game = new GameState(word);
+
         await base.OnInitializedAsync();
     }
 }

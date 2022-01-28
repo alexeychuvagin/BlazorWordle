@@ -25,7 +25,7 @@ public sealed class GameState
     public async Task CreateNewGameAsync()
     {
         var word = await _client.GetRandomWordAsync();
-        _game = new WordleGame("world", 6);
+        _game = new WordleGame(word, 6);
     }
 
     public void Submit()

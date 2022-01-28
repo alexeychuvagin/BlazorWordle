@@ -63,6 +63,10 @@ header[b-p561xn6ztx] {
         font-size: 28px;
         text-transform: uppercase;
         pointer-events: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 
     header .info a[b-p561xn6ztx] {
@@ -102,6 +106,10 @@ header[b-p561xn6ztx] {
         text-transform: uppercase;
         -webkit-tap-highlight-color: rgba(0,0,0,0.3);
     }
+
+        .keyboard button:last-of-type[b-6p7ujmuzbn] {
+            margin: 0;
+        }
 
     .keyboard .half[b-6p7ujmuzbn] {
         flex: 0.5;

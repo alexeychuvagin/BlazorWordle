@@ -41,7 +41,7 @@ jobs:
           dotnet-version: 6.0.x
       
       - name: Test project
-        run: dotnet test ./tests/BlazorWordle.Core.UnitTests/BlazorWordle.Core.UnitTests.csproj --no-restore
+        run: dotnet test --no-restore
      
   deploy:
     needs: [test]

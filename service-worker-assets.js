@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-\/hPzeyfZ+RjVYBlGq8PLnMOu5wVT5ZdsfVAatb2WJu8=",
+      "hash": "sha256-3w7DiTjc\/OuSjgWjVGKZPnPDSeLcy8GxiCdGsRh4WEg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -45,7 +45,7 @@
       "url": "_framework\/BlazorWordle.Core.dll"
     },
     {
-      "hash": "sha256-cKAspEW40jJ9NyC4AP1Zi\/utTaw3rbkTkvvQg6O9x74=",
+      "hash": "sha256-d9NMD5mjs0IMUgtcZ8brKFV1I\/rPIaKGyYb41pwFQik=",
       "url": "_framework\/BlazorWordle.dll"
     },
     {
@@ -217,7 +217,7 @@
       "url": "index.html"
     },
     {
-      "hash": "sha256-qYz1QvRshD5thQ8AUz4nM2CLc8OK52TpLnRI+s+0kwI=",
+      "hash": "sha256-rsB6r2t31mZzT3j7In3jDWkmjlTs1fiZ9fo7P9n\/w6k=",
       "url": "manifest.json"
     },
     {
@@ -225,5 +225,5 @@
       "url": "scripts\/theme-changer.js"
     }
   ],
-  "version": "Fi7nbOlO"
+  "version": "EMp5uY1f"
 };

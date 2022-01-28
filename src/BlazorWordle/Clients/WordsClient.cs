@@ -8,6 +8,7 @@ public sealed class WordsClient
     public WordsClient(HttpClient client)
     {
         _client = client;
+        Console.Write(client.BaseAddress?.ToString());
     }
 
     private async Task<IReadOnlyList<string>> GetWordsAsync()

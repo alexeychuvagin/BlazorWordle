@@ -1,4 +1,6 @@
 # BlazorWordle
+![](/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
+
 A simple implementation of the Wordle game in Blazor.
 
 - The design and idea of the game are taken from the original game, which you can find [here](https://www.powerlanguage.co.uk/wordle/).

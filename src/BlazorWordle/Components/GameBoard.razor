@@ -1,0 +1,45 @@
+﻿@using BlazorWordle.Core
+@using BlazorWordle.Core.Enums
+@using BlazorWordle.Core.ValueObjects
+@using BlazorWordle.Models
+@implements IDisposable
+
+<div class="game-board">
+    @foreach (var row in State.Board)
+    {
+        <div class="game-board-row">
+            @foreach (var cell in row)
+            {
+                <div class="game-board-cell" data-state="@cell.State.ToString().ToLower()">@cell.Character</div>
+            }
+        </div>
+    }
+
+    @for (int i = 0; i < State.AttemptsLeft; i++)
+    {
+        <div class="game-board-row">
+            @for (int j = 0; j < State.WordLength; j++)
+            {
+                <div class="game-board-cell">
+                    <div class="game-board-cell">
+                        @(i == 0 && j < State.CurrentWord.Length ? State.CurrentWord[j] : string.Empty)
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public GameState State { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        State.OnStateChanged += StateHasChanged;
+        return base.OnInitializedAsync();
+    }
+
+    public void Dispose() => State.OnStateChanged -= StateHasChanged;
+}

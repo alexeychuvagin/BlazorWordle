@@ -1,0 +1,45 @@
+﻿.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+    gap: 5px;
+}
+
+    .game-board .game-board-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .game-board .game-board-cell {
+        border: 2px solid var(--color-tone-4);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: bold;
+        vertical-align: middle;
+        box-sizing: border-box;
+        color: var(--tile-text-color);
+        text-transform: uppercase;
+        user-select: none;
+        width: 62px;
+        height: 62px;
+    }
+
+    .game-board-cell[data-state='absent'] {
+        background-color: var(--gray);
+    }
+
+    .game-board-cell[data-state='correct'] {
+        background-color: var(--green);
+    }
+
+    .game-board-cell[data-state='present'] {
+        background-color: var(--yellow);
+    }

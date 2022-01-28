@@ -1,0 +1,24 @@
+﻿@inject IJSRuntime jsRuntime
+
+<div>
+    <button @onclick="ChangeThemeAsync">@(DarkMode ? "☀️" : "🌑")</button>
+</div>
+
+@code {
+    private bool DarkMode { get; set; } = false;
+
+    private async Task ChangeThemeAsync()
+    {
+        DarkMode = !DarkMode;
+
+        if (DarkMode)
+        {
+            await jsRuntime.InvokeVoidAsync("JsFunctions.removeBodyClass", "darkmode");
+        }
+        else
+        {
+            await jsRuntime.InvokeVoidAsync("JsFunctions.setBodyClass", "darkmode");
+        }
+
+    }
+}

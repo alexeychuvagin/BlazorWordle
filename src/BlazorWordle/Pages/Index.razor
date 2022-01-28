@@ -1,0 +1,20 @@
+﻿@page "/"
+@using BlazorWordle.Core
+@using BlazorWordle.Components
+@using BlazorWordle.Models
+@using BlazorWordle.Clients
+@inject GameState state
+
+<PageTitle>Blazor Wordle</PageTitle>
+
+<Header />
+<GameBoard State="@state" />
+<Keyboard State="@state" />
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await state.CreateNewGameAsync();
+        await base.OnInitializedAsync();
+    }
+}

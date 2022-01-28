@@ -1,0 +1,46 @@
+﻿@using BlazorWordle.Models
+
+<div class="keyboard">
+    <div class="row">
+        <button onclick="@(() => State?.PressKey('q'))">q</button>
+        <button onclick="@(() => State?.PressKey('w'))">w</button>
+        <button onclick="@(() => State?.PressKey('e'))">e</button>
+        <button onclick="@(() => State?.PressKey('r'))">r</button>
+        <button onclick="@(() => State?.PressKey('t'))">t</button>
+        <button onclick="@(() => State?.PressKey('y'))">y</button>
+        <button onclick="@(() => State?.PressKey('u'))">u</button>
+        <button onclick="@(() => State?.PressKey('i'))">i</button>
+        <button onclick="@(() => State?.PressKey('o'))">o</button>
+        <button onclick="@(() => State?.PressKey('p'))">p</button>
+    </div>
+    <div class="row">
+        <div class="half" />
+        <button onclick="@(() => State?.PressKey('a'))">a</button>
+        <button onclick="@(() => State?.PressKey('s'))">s</button>
+        <button onclick="@(() => State?.PressKey('d'))">d</button>
+        <button onclick="@(() => State?.PressKey('f'))">f</button>
+        <button onclick="@(() => State?.PressKey('g'))">g</button>
+        <button onclick="@(() => State?.PressKey('h'))">h</button>
+        <button onclick="@(() => State?.PressKey('j'))">j</button>
+        <button onclick="@(() => State?.PressKey('k'))">k</button>
+        <button onclick="@(() => State?.PressKey('l'))">l</button>
+        <div class="half" />
+    </div>
+    <div class="row">
+        <button class="one-and-a-half" onclick="@(() => State?.Submit())">Enter</button>
+        <button onclick="@(() => State?.PressKey('z'))">z</button>
+        <button onclick="@(() => State?.PressKey('x'))">x</button>
+        <button onclick="@(() => State?.PressKey('c'))">c</button>
+        <button onclick="@(() => State?.PressKey('v'))">v</button>
+        <button onclick="@(() => State?.PressKey('b'))">b</button>
+        <button onclick="@(() => State?.PressKey('n'))">n</button>
+        <button onclick="@(() => State?.PressKey('m'))">m</button>
+        <button class="one-and-a-half" onclick="@(() => State?.Backspace())">⬅️</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public GameState? State { get; set; }
+}

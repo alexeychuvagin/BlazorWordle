@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-AtKdsi0oRYPLoU0DECqrx7RwxIGJauSK2ys165zATb4=",
+      "hash": "sha256-ws8iDuhRhF+QtoVEIY8JQhg4DVLkzBYevaT3r7NdWCY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -45,7 +45,7 @@
       "url": "_framework\/BlazorWordle.Core.dll"
     },
     {
-      "hash": "sha256-BmSUmKaHZ3V04PvSXxiGhBqWkShxmgzr70t2ru9NqVM=",
+      "hash": "sha256-zgvqJr+5uMgJtMDQUj\/JNsvMrh3RdcUhDO2wnbmKYFg=",
       "url": "_framework\/BlazorWordle.dll"
     },
     {
@@ -225,5 +225,5 @@
       "url": "scripts\/theme-changer.js"
     }
   ],
-  "version": "5v7QF7pI"
+  "version": "utrOvYrG"
 };

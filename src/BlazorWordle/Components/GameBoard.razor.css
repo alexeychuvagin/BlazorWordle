@@ -8,16 +8,14 @@
     gap: 5px;
 }
 
-.game-board-row,
-::deep .active-row {
+::deep .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 5px;
 }
 
-.game-board-cell,
-::deep .active-row-cell {
+::deep .cell {
     border: 1px solid var(--color-tone-4);
     display: inline-flex;
     justify-content: center;
@@ -34,14 +32,14 @@
     height: 62px;
 }
 
-    .game-board-cell[data-state='absent'] {
-        background-color: var(--darkgray);
-    }
+.cell[data-state='absent'] {
+    background-color: var(--darkgray);
+}
 
-    .game-board-cell[data-state='correct'] {
-        background-color: var(--green);
-    }
+.cell[data-state='correct'] {
+    background-color: var(--green);
+}
 
-    .game-board-cell[data-state='present'] {
-        background-color: var(--yellow);
-    }
+.cell[data-state='present'] {
+    background-color: var(--yellow);
+}

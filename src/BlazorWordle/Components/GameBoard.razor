@@ -1,32 +1,29 @@
-﻿@using BlazorWordle.Core
-@using BlazorWordle.Core.Enums
-@using BlazorWordle.Core.ValueObjects
-@using BlazorWordle.Interfaces
+﻿@using BlazorWordle.Interfaces
 @implements IDisposable
 
 <div class="game-board">
     @* Answers *@
     @foreach (var row in State.Board)
     {
-        <div class="game-board-row">
+        <div class="row">
             @foreach (var cell in row)
             {
-                <div class="game-board-cell" data-state="@cell.State.ToString().ToLower()">@cell.Character</div>
+                <div class="cell" data-state="@cell.State.ToString().ToLower()">@cell.Character</div>
             }
         </div>
     }
 
     @if (State.AttemptsLeft > 0)
     {
-        <ActiveRow State="@State.CurrentWord" />
+        <UserInput State="@State.CurrentWord" />
 
         @* Placeholder *@
         @for (int i = 1; i < State.AttemptsLeft; i++)
         {
-            <div class="game-board-row">
+            <div @key="i" class="row">
                 @for (int j = 0; j < State.WordLength; j++)
                 {
-                    <div class="game-board-cell" />
+                    <div @key="j" class="cell" />
                 }
         </div>
         }

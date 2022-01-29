@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-sG1f3KGuBVMfgY8byY2a+4Qzoz1Jr3m0VY2pcXTgZXo=",
+      "hash": "sha256-eT92kiQuGVa9DSeLZTnm9WKFXi8Y+yPwGC2yvcq70YU=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -45,7 +45,7 @@
       "url": "_framework\/BlazorWordle.Core.dll"
     },
     {
-      "hash": "sha256-JY\/FD3yigBbOE\/6wdcxfBoOM1IuhAWn4UainilAPtLY=",
+      "hash": "sha256-jozkvY9PpLYuhcSi4gtDviGmupTXb+\/fQQvq+l3Xd4c=",
       "url": "_framework\/BlazorWordle.dll"
     },
     {
@@ -53,7 +53,7 @@
       "url": "_framework\/JetBrains.Annotations.dll"
     },
     {
-      "hash": "sha256-lHNh3DXG855WaAIWKKZr77jumGs3Iw3WHyNaxHjcacI=",
+      "hash": "sha256-py\/A0CJy\/WjGeKJKdn4pQ2d9aBu\/QHQrQvcHIgwaafo=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
@@ -193,7 +193,7 @@
       "url": "_framework\/System.Threading.dll"
     },
     {
-      "hash": "sha256-hU8cPE88CiGUH36j7wV0WgEVgp75nI4uEssvrfjuQ0k=",
+      "hash": "sha256-aAWgaGqJGez+FMWjHyXsqvflUXNlNxO6Z56AFtdyB6Y=",
       "url": "BlazorWordle.styles.css"
     },
     {
@@ -225,5 +225,5 @@
       "url": "scripts\/theme-changer.js"
     }
   ],
-  "version": "kMPKeuF3"
+  "version": "8dFxJ+cZ"
 };

@@ -9,16 +9,14 @@
     gap: 5px;
 }
 
-.game-board-row[b-phsem7obfe],
-[b-phsem7obfe] .active-row {
+[b-phsem7obfe] .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 5px;
 }
 
-.game-board-cell[b-phsem7obfe],
-[b-phsem7obfe] .active-row-cell {
+[b-phsem7obfe] .cell {
     border: 1px solid var(--color-tone-4);
     display: inline-flex;
     justify-content: center;
@@ -35,17 +33,17 @@
     height: 62px;
 }
 
-    .game-board-cell[data-state='absent'][b-phsem7obfe] {
-        background-color: var(--darkgray);
-    }
+.cell[data-state='absent'][b-phsem7obfe] {
+    background-color: var(--darkgray);
+}
 
-    .game-board-cell[data-state='correct'][b-phsem7obfe] {
-        background-color: var(--green);
-    }
+.cell[data-state='correct'][b-phsem7obfe] {
+    background-color: var(--green);
+}
 
-    .game-board-cell[data-state='present'][b-phsem7obfe] {
-        background-color: var(--yellow);
-    }
+.cell[data-state='present'][b-phsem7obfe] {
+    background-color: var(--yellow);
+}
 /* /Components/Header.razor.rz.scp.css */
 header[b-p561xn6ztx] {
     display: flex;
@@ -80,7 +78,6 @@ header[b-p561xn6ztx] {
 .keyboard[b-6p7ujmuzbn] {
     margin: 0 8px;
     user-select: none;
-    margin-bottom: 5px;
 }
 
 .keyboard-row[b-6p7ujmuzbn] {

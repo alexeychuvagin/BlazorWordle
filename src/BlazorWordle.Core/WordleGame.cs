@@ -26,9 +26,9 @@ public sealed class WordleGame
 
         Status = GameStatus.InProgress;
     }
-    
+
     public void Submit(string word)
-    { 
+    {
         if (AttemptsLeft == 0)
         {
             throw new Exception("Game over");

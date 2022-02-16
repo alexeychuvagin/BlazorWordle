@@ -8,7 +8,7 @@ namespace BlazorWordle.Models;
 public sealed class GameState : IKeyboardState, IGameBoardState
 {
     private readonly WordleGame _game;
-    private CurrentWordState _currentWord;
+    private readonly CurrentWordState _currentWord;
 
     public GameState(string solution)
     {

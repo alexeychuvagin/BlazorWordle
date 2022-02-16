@@ -10,7 +10,7 @@ public class WordleGameTests
     public void Creating_a_new_game()
     {
         // Arrange
-        string solution = "Hello";
+        const string solution = "Hello";
 
         // Act
         WordleGame sut = new(solution, 6);
@@ -25,7 +25,7 @@ public class WordleGameTests
     public void Changing_attempt_number()
     {
         // Arrange
-        string solution = "Hello";
+        const string solution = "Hello";
         WordleGame sut = new(solution, 6);
 
         // Act
@@ -39,7 +39,7 @@ public class WordleGameTests
     public void Recognizing_absent_letters()
     {
         // Arrange
-        string solution = "Hello";
+        const string solution = "Hello";
         WordleGame sut = new(solution, 6);
 
         // Act
@@ -55,7 +55,7 @@ public class WordleGameTests
     public void Recognizing_present_letters()
     {
         // Arrange
-        string solution = "Hello";
+        const string solution = "Hello";
         WordleGame sut = new(solution, 6);
 
         // Act
@@ -69,7 +69,7 @@ public class WordleGameTests
     public void Recognizing_correct_letters()
     {
         // Arrange
-        string solution = "Hello";
+        const string solution = "Hello";
         WordleGame sut = new(solution, 6);
 
         // Act
@@ -83,7 +83,7 @@ public class WordleGameTests
     public void Win_game()
     {
         // Arrange
-        string solution = "Hello";
+        const string solution = "Hello";
         WordleGame sut = new(solution, 6);
 
         // Act
@@ -97,7 +97,7 @@ public class WordleGameTests
     public void Lose_game()
     {
         // Arrange
-        string solution = "Hello";
+        const string solution = "Hello";
         WordleGame sut = new(solution, 6);
 
         // Act

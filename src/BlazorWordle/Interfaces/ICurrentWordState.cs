@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BlazorWordle.Interfaces;
+﻿namespace BlazorWordle.Interfaces;
 
 public interface ICurrentWordState
 {

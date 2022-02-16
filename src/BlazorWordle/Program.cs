@@ -1,6 +1,5 @@
 using BlazorWordle;
 using BlazorWordle.Clients;
-using BlazorWordle.Models;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 

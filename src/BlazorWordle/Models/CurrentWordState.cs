@@ -1,5 +1,4 @@
-﻿using System;
-using BlazorWordle.Interfaces;
+﻿using BlazorWordle.Interfaces;
 
 namespace BlazorWordle.Models;
 
@@ -10,7 +9,7 @@ public class CurrentWordState : ICurrentWordState
 
     public char this[int i]
         => i < Value.Length ? Value[i] : ' ';
-    
+
     #region Events
 
     public event Action? OnStateChanged;

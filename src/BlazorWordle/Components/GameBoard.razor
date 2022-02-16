@@ -25,7 +25,7 @@
                 {
                     <div @key="j" class="cell" />
                 }
-        </div>
+            </div>
         }
     }
 </div>
@@ -33,7 +33,7 @@
 @code {
     [Parameter]
     [EditorRequired]
-    public IGameBoardState State { get; set; }
+    public IGameBoardState State { get; set; } = default!;
 
     protected override Task OnInitializedAsync()
     {

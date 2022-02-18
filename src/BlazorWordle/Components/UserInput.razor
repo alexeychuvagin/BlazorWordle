@@ -11,7 +11,7 @@
 @code {
     [Parameter]
     [EditorRequired]
-    public ICurrentWordState? State { get; set; }
+    public ICurrentWordState State { get; set; } = default!;
 
     protected override Task OnInitializedAsync()
     {

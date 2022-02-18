@@ -53,7 +53,7 @@
 
     [Parameter]
     [EditorRequired]
-    public IKeyboardState State { get; set; }
+    public IKeyboardState State { get; set; } = default!;
 
     protected override Task OnInitializedAsync()
     {

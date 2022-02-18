@@ -2,7 +2,7 @@
 
 name: Deploy to GitHub Pages
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -17,32 +17,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-      
+
       - name: Install dependencies
         run: dotnet restore
-      
+
       - name: Build project
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build -c Release --no-restore
 
   test:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-      
+
       - name: Test project
-        run: dotnet test --no-restore
-     
+        run: dotnet test -c Release --no-restore
+
   deploy:
     needs: [test]
     runs-on: ubuntu-latest
@@ -60,15 +60,15 @@ jobs:
       # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
       - name: Change base-tag in index.html from / to /BlazorWordle
         run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorWordle\/" \/>/g' release/wwwroot/index.html
-    
+
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html
         run: cp release/wwwroot/index.html release/wwwroot/404.html
-        
+
       # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
-      
+
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

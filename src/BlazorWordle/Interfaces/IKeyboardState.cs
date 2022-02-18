@@ -1,6 +1,4 @@
-﻿using System;
-using BlazorWordle.Core.Enums;
-using BlazorWordle.Core.ValueObjects;
+﻿using BlazorWordle.Core.Enums;
 
 namespace BlazorWordle.Interfaces;
 

@@ -8,8 +8,8 @@
   "resources": {
     "assembly": {
       "Ardalis.GuardClauses.dll": "sha256-FRq1drDUnZ+lfzTeY8KiyX2fmOzLDlsRXOf8WDYwQTo=",
-      "BlazorWordle.Core.dll": "sha256-kpNrMq9T32SqghCDlxFZjWHPri+FTyd20bdU7vnRicY=",
-      "BlazorWordle.dll": "sha256-gwUSha7W+wt+kUrvNtv9TRuTV9B++lt5efipc\/xIb0k=",
+      "BlazorWordle.Core.dll": "sha256-mbPQ2MrlIg67YgrdsSAqy6jSeo0WuObMJPu9rbC4I24=",
+      "BlazorWordle.dll": "sha256-4yI0\/kAPjIO3AbLc4Y7ZbMbiWdA7oCpNWQxKHJUcRsc=",
       "JetBrains.Annotations.dll": "sha256-fAnbbyWf2qOMqEIgS28noiDty6Bz2ByzJXWDkYFpJn8=",
       "Microsoft.AspNetCore.Components.dll": "sha256-7HV\/F8VLPONEOkuo7EMh1wItS1rWzi5ufyPgkOFjDic=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-MKtfM\/JFTsrwgrS1ZRV9ZjOFVxZxb84bwpccCX9GBlg=",

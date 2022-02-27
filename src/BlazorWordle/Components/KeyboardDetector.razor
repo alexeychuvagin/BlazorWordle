@@ -1,0 +1,14 @@
+﻿@inject IJSRuntime jsRuntime
+@implements IAsyncDisposable
+
+@code {
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await jsRuntime.InvokeVoidAsync("EventListenerJsFunctions.addKeyboardListenerEvent");
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await jsRuntime.InvokeVoidAsync("EventListenerJsFunctions.removeKeyboardListenerEvent");
+    }
+}

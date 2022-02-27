@@ -13,11 +13,11 @@
 
         if (DarkMode)
         {
-            await jsRuntime.InvokeVoidAsync("JsFunctions.removeBodyClass", "darkmode");
+            await jsRuntime.InvokeVoidAsync("ThemeChangerJsFunctions.removeBodyClass", "darkmode");
         }
         else
         {
-            await jsRuntime.InvokeVoidAsync("JsFunctions.setBodyClass", "darkmode");
+            await jsRuntime.InvokeVoidAsync("ThemeChangerJsFunctions.setBodyClass", "darkmode");
         }
 
     }

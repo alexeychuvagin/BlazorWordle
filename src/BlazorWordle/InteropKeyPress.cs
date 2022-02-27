@@ -14,20 +14,14 @@ public static class InteropKeyPress
     public static event EventHandler<ConsoleKey>? KeyDownEvent;
 
     /// <summary>
-    /// Called by JavaScript when a Key Down event fires.
+    /// Called by JavaScript when a KeyDown event fires.
     /// </summary>
     [JSInvokable]
-    public static Task JsKeyDown(KeyboardEventArgs e)
+    public static void JsKeyDown(KeyboardEventArgs e)
     {
-        Console.WriteLine("***********************************************");
-        Console.WriteLine(e.Key);
-        Console.WriteLine("***********************************************");
-
-        if (Enum.TryParse<ConsoleKey>(e.Key, out var consoleKey))
+        if (Enum.TryParse<ConsoleKey>(e.Code, out var consoleKey))
         {
             KeyDownEvent?.Invoke(null, consoleKey);
         }
-
-        return Task.CompletedTask;
     }
 }

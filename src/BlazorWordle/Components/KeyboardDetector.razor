@@ -1,10 +1,36 @@
-﻿@inject IJSRuntime jsRuntime
+﻿@using BlazorWordle.Interfaces
+@inject IJSRuntime jsRuntime
 @implements IAsyncDisposable
 
 @code {
-    protected async override Task OnAfterRenderAsync(bool firstRender)
+    [Parameter]
+    [EditorRequired]
+    public IKeyboardState State { get; set; } = default!;
+
+    protected async override Task OnInitializedAsync()
     {
         await jsRuntime.InvokeVoidAsync("EventListenerJsFunctions.addKeyboardListenerEvent");
+        InteropKeyPress.KeyDownEvent += OnKeyDown;
+
+        await base.OnInitializedAsync();
+    }
+
+    private void OnKeyDown(object? sender, ConsoleKey ev)
+    {
+        switch (ev)
+        {
+            case >= ConsoleKey.A and <= ConsoleKey.Z:
+                State.PressKey((char)ev);
+                break;
+            case ConsoleKey.Enter:
+                State.Submit();
+                break;
+            case ConsoleKey.Backspace:
+                State.Backspace();
+                break;
+            default:
+                break;
+        }
     }
 
     public async ValueTask DisposeAsync()

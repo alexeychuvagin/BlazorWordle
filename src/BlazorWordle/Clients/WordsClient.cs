@@ -15,7 +15,7 @@ public sealed class WordsClient
         if (_words is null)
         {
             var response = await _client.GetStringAsync("assets/words.txt");
-            _words = response.Split('\n');
+            _words = response.Split(Environment.NewLine, StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
         }
 
         return _words;
